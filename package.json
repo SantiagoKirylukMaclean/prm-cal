@@ -18,7 +18,13 @@
     "@radix-ui/react-select": "^1.0.4",
     "lucide-react": "^0.379.0",
     "tailwindcss-animate": "^1.0.7",
-    "@supabase/supabase-js": "^2.39.5"
+    "@supabase/supabase-js": "^2.39.5",
+    "@fullcalendar/react": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/timegrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
+    "@fullcalendar/core": "^6.1.8",
+    "@radix-ui/react-dialog": "^1.0.5"
   },
   "devDependencies": {
     "typescript": "5.4.5",
