@@ -17,7 +17,8 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-select": "^1.0.4",
     "lucide-react": "^0.379.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@supabase/supabase-js": "^2.39.5"
   },
   "devDependencies": {
     "typescript": "5.4.5",
