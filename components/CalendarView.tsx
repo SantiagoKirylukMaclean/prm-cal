@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import FullCalendar from "@fullcalendar/react"
-import { EventApi, EventClickArg } from "@fullcalendar/core"
+import type { EventApi, EventClickArg } from "@fullcalendar/core"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
@@ -36,7 +36,7 @@ interface Reserva {
   price: number
   start_time: string
   slot_type_id: number
-  cal_slot_definitions: SlotType
+  cal_slot_definitions?: SlotType | null
 }
 
 interface CalendarEvent {
@@ -78,7 +78,7 @@ export default function CalendarView() {
       return
     }
 
-    const mapped = data.map((reserva: Reserva): CalendarEvent => {
+    const mapped = (data as unknown as Reserva[]).map((reserva): CalendarEvent => {
       const typeName = reserva.cal_slot_definitions?.name || ""
       const start = reserva.start_time
       const endDate = new Date(start)
