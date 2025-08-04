@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import FullCalendar, { EventApi, EventClickArg } from "@fullcalendar/react"
+import FullCalendar from "@fullcalendar/react"
+import { EventApi, EventClickArg } from "@fullcalendar/core"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
@@ -108,8 +109,9 @@ export default function CalendarView() {
     fetchReservations()
   }, [])
 
-  const handleEventClick = (info: EventClickArg) => {
-    setSelectedEvent(info.event)
+  const handleEventClick = (arg: EventClickArg) => {
+    const event: EventApi = arg.event
+    setSelectedEvent(event)
     setOpen(true)
   }
 
