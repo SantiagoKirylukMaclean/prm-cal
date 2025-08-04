@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react"
-import FullCalendar from "@fullcalendar/react"
+import dynamic from "next/dynamic"
 import type { EventApi, EventClickArg } from "@fullcalendar/core"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
@@ -22,6 +22,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+
+const FullCalendar = dynamic(() => import("@fullcalendar/react"), { ssr: false })
 
 interface SlotType {
   id: number
