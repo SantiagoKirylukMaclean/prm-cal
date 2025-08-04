@@ -109,8 +109,9 @@ export default function CalendarView() {
     fetchReservations()
   }, [])
 
-  const handleEventClick = (info: EventClickArg) => {
-    setSelectedEvent(info.event)
+  const handleEventClick = (arg: EventClickArg) => {
+    const event: EventApi = arg.event
+    setSelectedEvent(event)
     setOpen(true)
   }
 
